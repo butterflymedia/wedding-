@@ -1,241 +1,148 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gokul & Athira | Wedding</title>  <!-- Premium Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">  <style>
-    :root {
-      --gold: #d4af37;
-      --dark: #1c120b;
-      --ivory: #fdfaf5;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gokul & Athira | A Sacred Union</title><!-- Ultra‑Luxury Fonts --><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=DM+Sans:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+:root{
+ --gold:#e6c47a;
+ --dark:#0c0704;
+ --ivory:#fefbf6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:'DM Sans',sans-serif;
+ background:var(--dark);
+ color:var(--ivory);
+ overflow-x:hidden;
+}
 
-    * { box-sizing: border-box; }
+/* GOD‑LEVEL LOADER */
+.loader{
+ position:fixed;inset:0;z-index:9999;
+ background:radial-gradient(circle,#1b120c,#050302);
+ display:flex;align-items:center;justify-content:center;
+ animation:loaderOut 1.5s ease forwards;animation-delay:3.5s;
+}
+.loader h1{
+ font-family:'Great Vibes',cursive;
+ font-size:4rem;color:var(--gold);
+ animation:pulse 2s infinite;
+}
+@keyframes pulse{50%{opacity:.4}}
+@keyframes loaderOut{to{opacity:0;visibility:hidden}}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--ivory);
-      color: #2b1d14;
-      scroll-behavior: smooth;
-    }
+/* HERO COSMIC */
+.hero{
+ height:120vh;
+ background:
+ linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+ url('thali.jpg') center/cover fixed;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;position:relative;
+}
+.hero::after{
+ content:'';position:absolute;inset:0;
+ background:radial-gradient(circle at center,rgba(255,215,150,.25),transparent 65%);
+ animation:halo 6s infinite alternate;
+}
+@keyframes halo{to{opacity:.4}}
+.hero h1{
+ font-family:'Bodoni Moda',serif;
+ font-size:6rem;letter-spacing:8px;
+ color:var(--gold);
+ text-shadow:0 0 40px rgba(230,196,122,.35);
+ animation:titleFloat 3s ease forwards;
+}
+@keyframes titleFloat{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
+.hero span{
+ display:block;
+ font-family:'Great Vibes',cursive;
+ font-size:2.8rem;
+ letter-spacing:2px;
+ margin-top:20px;
+}
 
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(20,12,8,0.65), rgba(20,12,8,0.85)),
-        url('https://images.unsplash.com/photo-1600687764374-48a4a41c5a0f');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-    }
+/* PARTICLE STARS */
+.stars::before{
+ content:'';position:fixed;inset:0;
+ background-image:radial-gradient(#fff 1px,transparent 1px);
+ background-size:120px 120px;
+ opacity:.08;z-index:0;
+ animation:starsMove 120s linear infinite;
+}
+@keyframes starsMove{to{background-position:10000px 10000px}}
 
-    .hero-content {
-      animation: heroFade 2s ease forwards;
-    }
+/* STORY SECTIONS */
+section.story{
+ min-height:110vh;
+ display:flex;align-items:center;justify-content:center;
+ background-attachment:fixed;
+ background-size:cover;background-position:center;
+ position:relative;overflow:hidden;
+}
+section.story::after{
+ content:'';position:absolute;inset:0;
+ background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75));
+}
+.panel{
+ position:relative;z-index:2;
+ background:rgba(255,255,255,.08);
+ backdrop-filter:blur(22px);
+ padding:90px;border-radius:40px;
+ max-width:950px;width:90%;
+ text-align:center;
+ box-shadow:0 60px 120px rgba(0,0,0,.7);
+ opacity:0;transform:translateY(120px) scale(.92);
+ transition:all 2s cubic-bezier(.19,1,.22,1);
+}
+.panel.show{opacity:1;transform:none}
 
-    @keyframes heroFade {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+h2{
+ font-family:'Bodoni Moda',serif;
+ font-size:3.6rem;letter-spacing:6px;
+ color:var(--gold);
+}
+h2::after{content:'✦ ✦ ✦';display:block;margin:20px 0;color:var(--gold)}
+.text{
+ font-size:1.3rem;line-height:2.1;
+}
 
-    .hero h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 4.5rem;
-      letter-spacing: 6px;
-      margin-bottom: 20px;
-      background: linear-gradient(120deg, #f7e7b5, var(--gold), #fff1c1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:50px;margin-top:40px}
+.details h3{font-family:'Bodoni Moda',serif;letter-spacing:4px;color:var(--gold)}
 
-    .hero p {
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 1rem;
-    }
+iframe{width:100%;height:380px;border:none;border-radius:30px;margin-top:40px;box-shadow:0 40px 90px rgba(0,0,0,.6)}
 
-    /* PARALLAX SECTIONS */
-    section.parallax {
-      position: relative;
-      min-height: 70vh;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
-    }
+footer{
+ background:#040201;padding:70px;text-align:center;
+ font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--gold)
+}
 
-    .overlay {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      padding: 60px;
-      border-radius: 30px;
-      max-width: 900px;
-      width: 100%;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.25);
-      animation: sectionFade 1.4s ease forwards;
-    }
-
-    @keyframes sectionFade {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h2 {
-      font-family: 'Cinzel', serif;
-      text-align: center;
-      letter-spacing: 4px;
-      font-size: 2.3rem;
-      margin-bottom: 30px;
-      color: var(--dark);
-    }
-
-    h2::after {
-      content: '✦ ✦ ✦';
-      display: block;
-      color: var(--gold);
-      margin-top: 12px;
-      letter-spacing: 6px;
-    }
-
-    .text {
-      text-align: center;
-      font-size: 1.15rem;
-      line-height: 2;
-    }
-
-    /* DETAILS */
-    .details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .details h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold);
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    /* IMAGE SECTION */
-    .photo img {
-      width: 100%;
-      border-radius: 28px;
-      box-shadow: 0 50px 90px rgba(0,0,0,0.35);
-    }
-
-    /* MAP */
-    iframe {
-      width: 100%;
-      height: 360px;
-      border: none;
-      border-radius: 28px;
-      margin-top: 30px;
-      box-shadow: 0 40px 70px rgba(0,0,0,0.25);
-    }
-
-    footer {
-      background: var(--dark);
-      color: #e7d9b0;
-      text-align: center;
-      padding: 50px 20px;
-      letter-spacing: 2px;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 3rem; }
-      .overlay { padding: 35px; }
-    }
-  
-    /* LAMP GLOW EFFECT */
-    .lamp-glow::before {
-      content: '';
-      position: absolute;
-      inset: -40px;
-      background: radial-gradient(circle at center, rgba(255,215,150,0.35), transparent 70%);
-      filter: blur(20px);
-      animation: glowPulse 4s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 1; }
-    }
-
-    /* SACRED TEXT REVEAL */
-    .sacred-text {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: sacredFade 1.8s ease forwards;
-      animation-delay: 0.6s;
-    }
-
-    @keyframes sacredFade {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* PARALLAX TUNING */
-    section.parallax {
-      background-attachment: fixed;
-    }
-
-    @media (max-width: 768px) {
-      section.parallax { background-attachment: scroll; }
-    }
-
-  </style></head>
-<body>  <!-- HERO -->  <div class="hero">
-    <div class="hero-content">
-      <h1>Gokul & Athira</h1>
-      <p>We are getting married</p>
+@media(max-width:768px){
+ .hero h1{font-size:3.6rem}
+ section.story{background-attachment:scroll}
+ .panel{padding:50px}
+}
+</style></head>
+<body class="stars"><div class="loader"><h1>Gokul & Athira</h1></div><section class="hero">
+  <div style="position:relative;z-index:2">
+    <h1>Gokul & Athira</h1>
+    <span>A Sacred Union</span>
+  </div>
+</section><section class="story" style="background-image:url('thali.jpg')">
+  <div class="panel"><h2>Invitation</h2><p class="text">With divine blessings and ancestral grace,<br>we invite you to witness the sacred union of Gokul and Athira.</p></div>
+</section><section class="story" style="background-image:url('couple.jpg')"></section><section class="story" style="background-image:url('mandapam.jpg')">
+  <div class="panel"><h2>Wedding Details</h2>
+    <div class="details">
+      <div><h3>Date</h3><p>May 3rd, 2026<br>Sunday</p></div>
+      <div><h3>Time</h3><p>11:20 – 11:45 AM</p></div>
+      <div><h3>Venue</h3><p>Elamkavu Devi Temple Auditorium<br>Kothala</p></div>
     </div>
-  </div>  <!-- INVITE -->  <section class="parallax" style="background-image:url('thali.jpg');">
-    <div class="overlay">
-      <h2>Invitation</h2>
-      <p class="text">
-        With the blessings of Almighty God and our beloved parents,<br>
-        we warmly invite you and your family to grace the auspicious wedding ceremony of
-        <strong>Gokul</strong> and <strong>Athira</strong>.
-      </p>
-    </div>
-  </section>  <!-- PHOTO -->  <section class="parallax" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
-    <div class="overlay photo">
-      <img src="couple.jpg" alt="Gokul and Athira" />
-    </div>
-  </section>  <!-- DETAILS -->  <section class="parallax" style="background-image:url('mandapam.jpg');">
-    <div class="overlay">
-      <h2>Wedding Details</h2>
-      <div class="details">
-        <div>
-          <h3>Date</h3>
-          <p>May 3rd, 2026<br>Sunday</p>
-        </div>
-        <div>
-          <h3>Time</h3>
-          <p>11:20 AM – 11:45 AM</p>
-        </div>
-        <div>
-          <h3>Venue</h3>
-          <p>Elamkavu Devi Temple Auditorium<br>Kothala</p>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- MAP -->  <section class="parallax" style="background-image:url('venue.jpg');">
-    <div class="overlay">
-      <h2>Venue</h2>
-      <iframe src="https://www.google.com/maps?q=Elamkavu+Devi+Temple+Auditorium+Kothala&output=embed"></iframe>
-    </div>
-  </section>  <footer>
-    © 2026 Gokul & Athira | Wedding Invitation
-  </footer></body>
+  </div>
+</section><section class="story" style="background-image:url('venue.jpg')">
+  <div class="panel"><h2>Venue</h2><iframe src="https://www.google.com/maps?q=Elamkavu+Devi+Temple+Auditorium+Kothala&output=embed"></iframe></div>
+</section><footer>Gokul & Athira • 03.05.2026</footer><script>
+const panels=document.querySelectorAll('.panel');
+const reveal=()=>{panels.forEach(p=>{if(p.getBoundingClientRect().top<innerHeight*.75)p.classList.add('show');});};
+addEventListener('scroll',reveal);reveal();
+</script></body>
 </html>
