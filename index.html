@@ -2,23 +2,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gokul & Athira | Wedding</title>  <!-- Premium Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&family=Cinzel:wght@500;600&display=swap');
+  <title>Gokul & Athira | Wedding</title>  <!-- Premium Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">  <style>
+    :root {
+      --gold: #d4af37;
+      --dark: #1c120b;
+      --ivory: #fdfaf5;
+    }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #fffaf0, #f2e6d8);
-      color: #2f2420;
+      background: var(--ivory);
+      color: #2b1d14;
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
-    header {
-      position: relative;
-      min-height: 100vh;
-      background:
-        linear-gradient(180deg, rgba(40,25,15,0.55), rgba(40,25,15,0.75)),
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(20,12,8,0.65), rgba(20,12,8,0.85)),
         url('https://images.unsplash.com/photo-1600687764374-48a4a41c5a0f');
       background-size: cover;
       background-position: center;
@@ -26,168 +30,157 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fffaf0;
+      color: #fff;
     }
 
-    header::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.55));
+    .hero-content {
+      animation: heroFade 2s ease forwards;
     }
 
-    header > div {
-      position: relative;
-      z-index: 2;
-      animation: heroReveal 1.6s ease forwards;
+    @keyframes heroFade {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes heroReveal {
-      from { opacity: 0; transform: translateY(40px) scale(0.96); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    header h1 {
+    .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: 4.2rem;
-      letter-spacing: 4px;
+      font-size: 4.5rem;
+      letter-spacing: 6px;
       margin-bottom: 20px;
-    }
-
-    .name {
-      background: linear-gradient(120deg, #f6e6b4, #d4af37, #fff1c1);
+      background: linear-gradient(120deg, #f7e7b5, var(--gold), #fff1c1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .amp {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      display: inline-block;
-      margin: 0 10px;
-      color: #f0d78c;
-    }
-
-    header p {
+    .hero p {
       letter-spacing: 4px;
       text-transform: uppercase;
       font-size: 1rem;
-      opacity: 0.95;
     }
 
-    section {
-      max-width: 1100px;
-      margin: 120px auto;
-      padding: 0 22px;
+    /* PARALLAX SECTIONS */
+    section.parallax {
+      position: relative;
+      min-height: 70vh;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+    }
+
+    .overlay {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      padding: 60px;
+      border-radius: 30px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+      animation: sectionFade 1.4s ease forwards;
+    }
+
+    @keyframes sectionFade {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
       font-family: 'Cinzel', serif;
       text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 50px;
-      letter-spacing: 3px;
-      position: relative;
+      letter-spacing: 4px;
+      font-size: 2.3rem;
+      margin-bottom: 30px;
+      color: var(--dark);
     }
 
-    h2::before,
     h2::after {
-      content: '✦';
-      color: #caa24d;
-      margin: 0 14px;
+      content: '✦ ✦ ✦';
+      display: block;
+      color: var(--gold);
+      margin-top: 12px;
+      letter-spacing: 6px;
     }
 
-    .card {
-      backdrop-filter: blur(14px);
-      background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65));
-      border-radius: 26px;
-      padding: 55px;
-      margin-bottom: 80px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.18);
-      transform: translateY(40px);
-      opacity: 0;
-      animation: sectionReveal 1.2s ease forwards;
-    }
-
-    @keyframes sectionReveal {
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .invite-line {
-      font-size: 1.2rem;
-      line-height: 2;
+    .text {
       text-align: center;
+      font-size: 1.15rem;
+      line-height: 2;
     }
 
-    .photo-card img {
-      width: 100%;
-      border-radius: 28px;
-      box-shadow: 0 50px 90px rgba(0,0,0,0.35);
-      transition: transform 0.8s ease;
-    }
-
-    .photo-card img:hover {
-      transform: scale(1.05);
-    }
-
+    /* DETAILS */
     .details {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
       text-align: center;
+      margin-top: 30px;
     }
 
     .details h3 {
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
       letter-spacing: 2px;
-      color: #7a5b28;
+      margin-bottom: 10px;
     }
 
-    .map-card iframe {
+    /* IMAGE SECTION */
+    .photo img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 50px 90px rgba(0,0,0,0.35);
+    }
+
+    /* MAP */
+    iframe {
       width: 100%;
       height: 360px;
-      border-radius: 26px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.25);
       border: none;
+      border-radius: 28px;
+      margin-top: 30px;
+      box-shadow: 0 40px 70px rgba(0,0,0,0.25);
     }
 
     footer {
-      background: linear-gradient(180deg, #2a1b10, #120a05);
-      color: #e8d8b0;
-      padding: 60px 20px;
+      background: var(--dark);
+      color: #e7d9b0;
       text-align: center;
+      padding: 50px 20px;
       letter-spacing: 2px;
     }
-  </style></head>
-<body>  <header>
-    <h1><span class="name">Gokul</span> <span class="amp">&</span> <span class="name">Athira</span></h1>
-    <p>We are getting married</p>
-  </header>  <section>
-    <div class="card invite-line">
-      <p>
-        With the blessings of Almighty God and our beloved parents,<br>
-        we warmly invite you and your family to grace the auspicious
-        wedding ceremony of
-      </p>
-    </div><div class="card" style="text-align:center;">
-  <img src="couple.jpg" alt="Gokul and Athira" style="max-width:100%; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.15); margin-bottom:20px;" />
-  <p style="font-size:1.1rem;">
-    <strong>Gokul S Kumar</strong><br>
-    Son of Sri. Sreekumar N.B & Smt. Sreelatha Sreekumar
-  </p>
-  <p style="font-size:1.1rem; margin-top:10px;">
-    <strong>Athira R Krishnan</strong><br>
-    Daughter of Sri. P. R. Radhakrishnan Nair & Smt. G. Ushakumari
-  </p>
-</div>
 
-  </section>  <section>
-    <div class="card">
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .overlay { padding: 35px; }
+    }
+  </style></head>
+<body>  <!-- HERO -->  <div class="hero">
+    <div class="hero-content">
+      <h1>Gokul & Athira</h1>
+      <p>We are getting married</p>
+    </div>
+  </div>  <!-- INVITE -->  <section class="parallax" style="background-image:url('https://images.unsplash.com/photo-1523437237164-d442d57cc3c9');">
+    <div class="overlay">
+      <h2>Invitation</h2>
+      <p class="text">
+        With the blessings of Almighty God and our beloved parents,<br>
+        we warmly invite you and your family to grace the auspicious wedding ceremony of
+        <strong>Gokul</strong> and <strong>Athira</strong>.
+      </p>
+    </div>
+  </section>  <!-- PHOTO -->  <section class="parallax" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
+    <div class="overlay photo">
+      <img src="couple.jpg" alt="Gokul and Athira" />
+    </div>
+  </section>  <!-- DETAILS -->  <section class="parallax" style="background-image:url('https://images.unsplash.com/photo-1508614589041-895b88991e3e');">
+    <div class="overlay">
       <h2>Wedding Details</h2>
       <div class="details">
         <div>
           <h3>Date</h3>
-          <p>May 3rd, 2026 (Sunday)</p>
+          <p>May 3rd, 2026<br>Sunday</p>
         </div>
         <div>
           <h3>Time</h3>
@@ -198,20 +191,13 @@
           <p>Elamkavu Devi Temple Auditorium<br>Kothala</p>
         </div>
       </div>
-    </div><div class="card map-card">
-  <h2>Wedding Ceremony</h2>
-  <p><strong>Date:</strong> May 3rd, 2026 (Sunday)</p>
-  <p><strong>Time:</strong> 11:20 AM – 11:45 AM</p>
-  <p><strong>Venue:</strong> Elamkavu Devi Temple Auditorium, Kothala</p>
-  <iframe src="https://www.google.com/maps?q=Elamkavu+Devi+Temple+Auditorium+Kothala&output=embed"></iframe>
-</div>
-
-<div class="card">
-  <h2>With Love</h2>
-  <p style="text-align:center;">We request the pleasure of your presence and blessings on our special day.</p>
-</div>
-
+    </div>
+  </section>  <!-- MAP -->  <section class="parallax" style="background-image:url('https://images.unsplash.com/photo-1470219556762-1771e7f9427d');">
+    <div class="overlay">
+      <h2>Location</h2>
+      <iframe src="https://www.google.com/maps?q=Elamkavu+Devi+Temple+Auditorium+Kothala&output=embed"></iframe>
+    </div>
   </section>  <footer>
-    <p>© 2026 Gokul S Kumar & Athira R Krishnan | Wedding Invitation</p>
+    © 2026 Gokul & Athira | Wedding Invitation
   </footer></body>
 </html>
