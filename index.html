@@ -2,147 +2,177 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gokul & Athira | A Sacred Union</title><!-- Ultra‑Luxury Fonts --><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=DM+Sans:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+<title>Gokul & Athira | A Sacred Union</title><!-- Premium Editorial Fonts --><link href="https://fonts.googleapis.com/css2?family=Canela&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet"><style>
 :root{
- --gold:#e6c47a;
- --dark:#0c0704;
- --ivory:#fefbf6;
+ --gold:#d8b36a;
+ --ink:#140c08;
+ --ivory:#fefbf7;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box}
 body{
+ margin:0;
  font-family:'DM Sans',sans-serif;
- background:var(--dark);
- color:var(--ivory);
+ background:linear-gradient(#0b0604,#1a100a);
+ color:#fefbf7;
  overflow-x:hidden;
 }
 
-/* GOD‑LEVEL LOADER */
-.loader{
- position:fixed;inset:0;z-index:9999;
- background:radial-gradient(circle,#1b120c,#050302);
- display:flex;align-items:center;justify-content:center;
- animation:loaderOut 1.5s ease forwards;animation-delay:3.5s;
-}
-.loader h1{
- font-family:'Great Vibes',cursive;
- font-size:4rem;color:var(--gold);
- animation:pulse 2s infinite;
-}
-@keyframes pulse{50%{opacity:.4}}
-@keyframes loaderOut{to{opacity:0;visibility:hidden}}
-
-/* HERO COSMIC */
+/* HERO */
 .hero{
- height:120vh;
- background:
- linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
- url('thali.jpg') center/cover fixed;
- display:flex;align-items:center;justify-content:center;
- text-align:center;position:relative;
-}
-.hero::after{
- content:'';position:absolute;inset:0;
- background:radial-gradient(circle at center,rgba(255,215,150,.25),transparent 65%);
- animation:halo 6s infinite alternate;
-}
-@keyframes halo{to{opacity:.4}}
-.hero h1{
- font-family:'Bodoni Moda',serif;
- font-size:6rem;letter-spacing:8px;
- color:var(--gold);
- text-shadow:0 0 40px rgba(230,196,122,.35);
- animation:titleFloat 3s ease forwards;
-}
-@keyframes titleFloat{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
-.hero span{
- display:block;
- font-family:'Great Vibes',cursive;
- font-size:2.8rem;
- letter-spacing:2px;
- margin-top:20px;
-}
-
-/* PARTICLE STARS */
-.stars::before{
- content:'';position:fixed;inset:0;
- background-image:radial-gradient(#fff 1px,transparent 1px);
- background-size:120px 120px;
- opacity:.08;z-index:0;
- animation:starsMove 120s linear infinite;
-}
-@keyframes starsMove{to{background-position:10000px 10000px}}
-
-/* STORY SECTIONS */
-section.story{
- min-height:110vh;
- display:flex;align-items:center;justify-content:center;
- background-attachment:fixed;
- background-size:cover;background-position:center;
- position:relative;overflow:hidden;
-}
-section.story::after{
- content:'';position:absolute;inset:0;
- background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75));
-}
-.panel{
- position:relative;z-index:2;
- background:rgba(255,255,255,.08);
- backdrop-filter:blur(22px);
- padding:90px;border-radius:40px;
- max-width:950px;width:90%;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
  text-align:center;
- box-shadow:0 60px 120px rgba(0,0,0,.7);
- opacity:0;transform:translateY(120px) scale(.92);
- transition:all 2s cubic-bezier(.19,1,.22,1);
+ padding:60px 20px;
 }
-.panel.show{opacity:1;transform:none}
+.hero h1{
+ font-family:'Canela',serif;
+ font-size:5rem;
+ letter-spacing:4px;
+ margin-bottom:18px;
+ color:var(--gold);
+ animation:fadeUp 2s ease forwards;
+}
+.hero p{
+ font-family:'Cormorant Garamond',serif;
+ font-size:1.4rem;
+ letter-spacing:3px;
+ opacity:.9;
+ animation:fadeUp 2.6s ease forwards;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+/* SECTION BASE */
+section{
+ max-width:900px;
+ margin:0 auto;
+ padding:120px 22px;
+}
+
+.section-label{
+ font-size:.85rem;
+ letter-spacing:4px;
+ text-transform:uppercase;
+ color:#d8b36a;
+ opacity:.85;
+ margin-bottom:14px;
+}
 
 h2{
- font-family:'Bodoni Moda',serif;
- font-size:3.6rem;letter-spacing:6px;
+ font-family:'Canela',serif;
+ font-size:2.8rem;
+ letter-spacing:3px;
+ margin-bottom:30px;
+}
+
+.divider{
+ width:120px;
+ height:1px;
+ background:linear-gradient(to right,transparent,var(--gold),transparent);
+ margin:30px 0;
+}
+
+/* TEXT BLOCKS */
+.prose{
+ font-family:'Cormorant Garamond',serif;
+ font-size:1.35rem;
+ line-height:2.1;
+}
+
+.prose em{
+ font-style:normal;
  color:var(--gold);
 }
-h2::after{content:'✦ ✦ ✦';display:block;margin:20px 0;color:var(--gold)}
-.text{
- font-size:1.3rem;line-height:2.1;
+
+/* DETAILS LIST */
+.meta{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:40px 60px;
+ margin-top:50px;
 }
 
-.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:50px;margin-top:40px}
-.details h3{font-family:'Bodoni Moda',serif;letter-spacing:4px;color:var(--gold)}
+.meta-item{
+ border-left:1px solid rgba(255,255,255,.15);
+ padding-left:24px;
+}
 
-iframe{width:100%;height:380px;border:none;border-radius:30px;margin-top:40px;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.meta-item span{
+ display:block;
+ font-size:.75rem;
+ letter-spacing:3px;
+ opacity:.7;
+ margin-bottom:6px;
+}
+
+.meta-item strong{
+ font-family:'Canela',serif;
+ font-size:1.4rem;
+ font-weight:400;
+}
+
+/* LOCATION */
+iframe{
+ width:100%;
+ height:360px;
+ border:none;
+ margin-top:50px;
+ border-radius:18px;
+}
 
 footer{
- background:#040201;padding:70px;text-align:center;
- font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--gold)
+ text-align:center;
+ padding:80px 20px 100px;
+ font-family:'Cormorant Garamond',serif;
+ letter-spacing:3px;
+ color:var(--gold);
 }
 
 @media(max-width:768px){
- .hero h1{font-size:3.6rem}
- section.story{background-attachment:scroll}
- .panel{padding:50px}
+ .hero h1{font-size:3.2rem}
+ .meta{grid-template-columns:1fr}
 }
 </style></head>
-<body class="stars"><div class="loader"><h1>Gokul & Athira</h1></div><section class="hero">
-  <div style="position:relative;z-index:2">
+<body><!-- HERO --><section class="hero">
+  <div>
     <h1>Gokul & Athira</h1>
-    <span>A Sacred Union</span>
+    <p>A Sacred Union</p>
   </div>
-</section><section class="story" style="background-image:url('thali.jpg')">
-  <div class="panel"><h2>Invitation</h2><p class="text">With divine blessings and ancestral grace,<br>we invite you to witness the sacred union of Gokul and Athira.</p></div>
-</section><section class="story" style="background-image:url('couple.jpg')"></section><section class="story" style="background-image:url('mandapam.jpg')">
-  <div class="panel"><h2>Wedding Details</h2>
-    <div class="details">
-      <div><h3>Date</h3><p>May 3rd, 2026<br>Sunday</p></div>
-      <div><h3>Time</h3><p>11:20 – 11:45 AM</p></div>
-      <div><h3>Venue</h3><p>Elamkavu Devi Temple Auditorium<br>Kothala</p></div>
+</section><!-- INVITATION --><section>
+  <div class="section-label">INVITATION</div>
+  <h2>With Grace & Blessings</h2>
+  <div class="divider"></div>
+  <p class="prose">
+    With the blessings of Almighty God and the love of our families,<br>
+    we invite you to share in a moment of quiet joy as
+    <em>Gokul</em> and <em>Athira</em>
+    begin their journey together.
+  </p>
+</section><!-- DETAILS --><section>
+  <div class="section-label">THE CEREMONY</div>
+  <h2>Wedding Details</h2>
+  <div class="divider"></div>  <div class="meta">
+    <div class="meta-item">
+      <span>Date</span>
+      <strong>May 3rd, 2026 · Sunday</strong>
+    </div>
+    <div class="meta-item">
+      <span>Time</span>
+      <strong>11:20 AM – 11:45 AM</strong>
+    </div>
+    <div class="meta-item">
+      <span>Venue</span>
+      <strong>Elamkavu Devi Temple Auditorium<br>Kothala</strong>
     </div>
   </div>
-</section><section class="story" style="background-image:url('venue.jpg')">
-  <div class="panel"><h2>Venue</h2><iframe src="https://www.google.com/maps?q=Elamkavu+Devi+Temple+Auditorium+Kothala&output=embed"></iframe></div>
-</section><footer>Gokul & Athira • 03.05.2026</footer><script>
-const panels=document.querySelectorAll('.panel');
-const reveal=()=>{panels.forEach(p=>{if(p.getBoundingClientRect().top<innerHeight*.75)p.classList.add('show');});};
-addEventListener('scroll',reveal);reveal();
-</script></body>
+</section><!-- LOCATION --><section>
+  <div class="section-label">LOCATION</div>
+  <h2>Finding Your Way</h2>
+  <div class="divider"></div>
+  <iframe src="https://www.google.com/maps?q=Elamkavu+Devi+Temple+Auditorium+Kothala&output=embed"></iframe>
+</section><footer>
+  Gokul & Athira · 03 · 05 · 2026
+</footer></body>
 </html>
