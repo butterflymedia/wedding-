@@ -2,77 +2,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Wedding</title>
-  <style>
+  <title>Gokul & Athira | Wedding</title>  <!-- Premium Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">  <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
+      font-family: 'Poppins', sans-serif;
       background: #fdfaf5;
       color: #3b2f2f;
+      scroll-behavior: smooth;
     }
+
     header {
-      background: linear-gradient(rgba(90,60,30,0.55), rgba(90,60,30,0.55)), url('https://images.unsplash.com/photo-1600687764374-48a4a41c5a0f');
+      position: relative;
+      background: linear-gradient(rgba(88, 60, 35, 0.55), rgba(88, 60, 35, 0.55)), url('https://images.unsplash.com/photo-1600687764374-48a4a41c5a0f');
       background-size: cover;
       background-position: center;
       color: #fffaf0;
       text-align: center;
-      padding: 120px 20px;
+      padding: 140px 20px;
     }
+
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      margin-bottom: 12px;
       letter-spacing: 1px;
     }
+
+    header p {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.95;
+    }
+
     section {
-      max-width: 900px;
-      margin: 60px auto;
+      max-width: 1000px;
+      margin: 80px auto;
       padding: 0 20px;
     }
+
     h2 {
+      font-family: 'Playfair Display', serif;
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 2.3rem;
+      margin-bottom: 30px;
       color: #6b3e26;
+      position: relative;
     }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #b08a57, #e6c98b);
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
     .card {
       background: #fffdf8;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-      margin-bottom: 35px;
+      padding: 45px;
+      border-radius: 20px;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.08);
+      margin-bottom: 50px;
       border-top: 6px solid #b08a57;
+      animation: fadeUp 1s ease forwards;
     }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .details {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      gap: 30px;
       text-align: center;
     }
+
+    .details h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #6b3e26;
+      margin-bottom: 8px;
+    }
+
     .invite-line {
       text-align: center;
       font-size: 1.15rem;
-      line-height: 1.8;
+      line-height: 1.9;
       color: #4a2f1b;
     }
+
+    .photo-card img {
+      width: 100%;
+      border-radius: 22px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      transition: transform 0.6s ease;
+    }
+
+    .photo-card img:hover {
+      transform: scale(1.03);
+    }
+
     .map-card iframe {
       width: 100%;
-      height: 320px;
+      height: 340px;
       border: none;
-      border-radius: 12px;
-      margin-top: 15px;
+      border-radius: 18px;
+      margin-top: 20px;
+      box-shadow: 0 25px 40px rgba(0,0,0,0.15);
     }
+
     footer {
       text-align: center;
-      padding: 35px;
+      padding: 45px 20px;
       background: #efe4d4;
       font-size: 0.9rem;
       color: #5a3b24;
+      letter-spacing: 1px;
     }
-  </style>
-</head>
+  </style></head>
 <body>  <header>
     <h1>Gokul S Kumar & Athira R Krishnan</h1>
     <p>We are getting married</p>
